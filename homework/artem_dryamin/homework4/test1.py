@@ -1,8 +1,7 @@
 my_dict = {
     'tuple': (1, 52, 'test', 'my', 'who'),
     'list': [16, 17, 18, 15, 'denis'],
-    'dict': {'one': 1, 'two': 2, 'three': 3,
-    'four': 4, 'five': 5},
+    'dict': {'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5},
     'set': {'artem', 'yan', 4, 5, 7}
     }
 print(my_dict['tuple'][-1])
