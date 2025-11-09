@@ -7,7 +7,7 @@ my_dict = {
 print(my_dict['tuple'][-1])
 my_dict['list'].append(26)
 my_dict['list'].pop(1)
-my_dict['dict']['i am a tuple'] = 6
+my_dict['dict'][('i am a tuple',)] = 6
 my_dict['dict'].pop('one')
 my_dict['set'].add('galya')
 my_dict['set'].pop()
