@@ -1,5 +1,4 @@
 a = 6
-
 while True:
     user_input = int(input('ugaday plz chislo'))
     if user_input == a:

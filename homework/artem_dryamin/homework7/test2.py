@@ -1,6 +1,8 @@
 words = {'I': 3, 'love': 5, 'Python': 1, '!': 50}
 
-def test(word):
+
+def new_function(word):
     for a, b in word.items():
         print(a * b)
-test(words)
+        
+new_function(words)
