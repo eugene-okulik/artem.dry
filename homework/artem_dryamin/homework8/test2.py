@@ -1,3 +1,8 @@
+import sys
+
+sys.set_int_max_str_digits(0)
+
+
 def fibonacci():
     a, b = 0, 1
     while True:
@@ -7,9 +12,10 @@ def fibonacci():
 
 def nth_fib(n):
     gen = fibonacci()
-    for _ in range(n):
-        next(gen)
-    return next(gen)
+    value = 0
+    for i in range(n + 1):
+        value = next(gen)
+    return value
 
 
 print(nth_fib(5))
