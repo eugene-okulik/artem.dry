@@ -41,6 +41,7 @@ class SchoolBook(Book):
         self.grup = grup
         self.zadaniya = zadaniya
 
+
 new_book1 = SchoolBook('Алгебра', 'Антонов', 250, 6543, 'Алгебра', 9)
 new_book2 = SchoolBook('Геометрия', 'Литвинов', 220, 6544, 'Геометрия', 10)
 new_book2.rezerv = True
@@ -48,7 +49,7 @@ new_book2.rezerv = True
 
 def new_func(new_book):
     new_text2 = (
-        f'Название: {new_book.title}, Автор: {new_book.author}, ' 
+        f'Название: {new_book.title}, Автор: {new_book.author}, '
         f'страниц: {new_book.count_str}, предмет: {new_book.prdmt}, класс: {new_book.grup}')
     if new_book.rezerv:
         print(f'{new_text2}, зарезервирована')
