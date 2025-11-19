@@ -27,17 +27,14 @@ class Bouquet:
     def __init__(self):
         self.flowers = []
 
-
     def add_flower(self, flower):
         self.flowers.append(flower)
-
 
     def get_cost(self):
         total = 0
         for flower in self.flowers:
             total += flower.cost
         return total
-
 
     def get_average_wilting_time(self):
         if len(self.flowers) == 0:
@@ -50,22 +47,17 @@ class Bouquet:
             total += remaining
         return total / len(self.flowers)
 
-
     def sort_by_fresh(self):
         self.flowers.sort(key=lambda flower: flower.fresh)
-
 
     def sort_by_color(self):
         self.flowers.sort(key=lambda flower: flower.color)
 
-
     def sort_by_stem_length(self):
         self.flowers.sort(key=lambda flower: flower.length)
 
-
     def sort_by_cost(self):
         self.flowers.sort(key=lambda flower: flower.cost)
-
 
     def find_by_life_time(self, min_days, max_days):
         result = []
@@ -73,7 +65,6 @@ class Bouquet:
             if min_days <= flower.life_time <= max_days:
                 result.append(flower)
         return result
-
 
     def show(self):
         if not self.flowers:
