@@ -23,9 +23,9 @@ for data_line in read_file():
 a, b, c = lines
 
 
-def datedate(l):
-    l = datetime.datetime.strptime(l, "%Y-%m-%d %H:%M:%S.%f")
-    return l
+def datedate(text):
+    text = datetime.datetime.strptime(text, "%Y-%m-%d %H:%M:%S.%f")
+    return text
 
 
 print(datedate(a) + datetime.timedelta(days=7))
