@@ -61,5 +61,4 @@ cursor.execute("""
 print("\nFull info:")
 for row in cursor.fetchall():
     print(row)
-
 db.close()
