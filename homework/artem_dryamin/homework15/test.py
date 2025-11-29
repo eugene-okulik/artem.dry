@@ -20,9 +20,8 @@ group_id = cursor.lastrowid
 print('Group ID:', group_id)
 cursor.execute("UPDATE students SET group_id = %s WHERE id = %s", (group_id, student_id))
 db.commit()
-cursor.execute("INSERT INTO books (title, taken_by_student_id) VALUES (%s, %s)", ('BEST AQA', student_id))
-db.commit()
-cursor.execute("INSERT INTO books (title, taken_by_student_id) VALUES (%s, %s)", ('Good Job', student_id))
+books_to_insert = [('BEST AQA', student_id), ('Good Job', student_id)]
+cursor.executemany("INSERT INTO books (title, taken_by_student_id) VALUES (%s, %s)", books_to_insert)
 db.commit()
 cursor.execute("INSERT INTO subjects (title) VALUES (%s)", ('Best subject1',))
 db.commit()
@@ -39,10 +38,16 @@ lesson3_id = cursor.lastrowid
 cursor.execute("INSERT INTO lessons (title, subject_id) VALUES (%s, %s)", ('Best lesson4', subject2_id))
 lesson4_id = cursor.lastrowid
 db.commit()
-cursor.execute("INSERT INTO marks (value, lesson_id, student_id) VALUES (%s, %s, %s)", (2, lesson1_id, student_id))
-cursor.execute("INSERT INTO marks (value, lesson_id, student_id) VALUES (%s, %s, %s)", (3, lesson2_id, student_id))
-cursor.execute("INSERT INTO marks (value, lesson_id, student_id) VALUES (%s, %s, %s)", (4, lesson3_id, student_id))
-cursor.execute("INSERT INTO marks (value, lesson_id, student_id) VALUES (%s, %s, %s)", (5, lesson4_id, student_id))
+marks_to_insert = [
+    (2, lesson1_id, student_id),
+    (3, lesson2_id, student_id),
+    (4, lesson3_id, student_id),
+    (5, lesson4_id, student_id)
+]
+cursor.executemany(
+    "INSERT INTO marks (value, lesson_count, student_id) VALUES (%s, %s, %s)",
+    marks_to_insert
+)
 db.commit()
 cursor.execute("SELECT * FROM marks WHERE student_id = %s", (student_id,))
 print("\nMarks:", cursor.fetchall())
