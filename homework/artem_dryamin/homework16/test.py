@@ -23,7 +23,7 @@ db = mysql.connect(
 )
 cursor = db.cursor()
 cursor.execute("""
-    SELECT 
+    SELECT
         s.name,
         s.second_name,
         g.title AS group_title,
