@@ -7,11 +7,8 @@ def main():
     parser.add_argument('logs_dir', help='Путь к папке с логами')
     parser.add_argument('--text', required=True, help='Текст для поиска')
     args = parser.parse_args()
-
-
     logs_dir = args.logs_dir
     search_text = args.text
-
     if not os.path.isdir(logs_dir):
         print("Ошибка: это не папка или путь не существует.")
         return
@@ -34,7 +31,11 @@ def main():
             if search_text.lower() in line.lower():
                 timestamp = "время не найдено"
                 for j in range(i, -1, -1):
-                    if len(lines[j]) >= 19 and lines[j][4] == '-' and lines[j][7] == '-' and lines[j][13] == ':' and lines[j][16] == ':':
+                    if (len(lines[j]) >= 19 and
+                        lines[j][4] == '-' and
+                        lines[j][7] == '-' and
+                        lines[j][13] == ':' and
+                        lines[j][16] == ':'):
                         timestamp = lines[j][:19].strip()
                         break
 
