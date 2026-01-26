@@ -47,6 +47,7 @@ def update_obj_patch():
 
 def clear(user_id):
     response = requests.delete(f'http://objapi.course.qa-practice.com/object/{user_id}')
+    print(response.status_code)
 
 
 def delete_obj():
