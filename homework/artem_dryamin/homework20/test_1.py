@@ -25,6 +25,7 @@ def new_session():
     yield
     print('Testing completed')
 
+
 @pytest.fixture()
 def new_obj():
     data = {"name": "Artem", "data": {"Age": 29, "Proff": "New_AQA"}}
@@ -53,7 +54,6 @@ def test_update_obj_patch(star_func, new_obj):
     response = requests.patch(f'http://objapi.course.qa-practice.com/object/{new_obj}', json=data, headers=headers)
     assert response.json()['name'] == 'Artem_22'
     assert response.status_code == 200
-
 
 
 def test_delete_obj(star_func, new_obj):
