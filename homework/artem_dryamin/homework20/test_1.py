@@ -5,10 +5,10 @@ import pytest
 @pytest.mark.critical
 @pytest.mark.parametrize('name', ['Denis', 'Oleg', 'Petr'])
 def test_create_obj(new_session, star_func, name):
-    data = {"name": "Artem", "data": {"Age": 29, "Proff": "New_AQA"}}
+    data = {"name": name, "data": {"Age": 29, "Proff": "New_AQA"}}
     headers = {'Content-type': 'application/json'}
     response = requests.post('http://objapi.course.qa-practice.com/object', json=data, headers=headers)
-    assert response.json()['name'] == 'Artem'
+    assert response.json()['name'] == name
     assert response.status_code == 200
 
 
@@ -44,7 +44,7 @@ def test_update_obj(star_func, new_obj):
             }
     headers = {'Content-type': 'application/json'}
     response = requests.put(f'http://objapi.course.qa-practice.com/object/{new_obj}', json=data, headers=headers)
-    assert response.json()['name'] == 'Artem_1'
+    assert response.json()['name'] == data['name']
     assert response.status_code == 200
 
 
@@ -52,7 +52,7 @@ def test_update_obj_patch(star_func, new_obj):
     data = {"name": "Artem_22"}
     headers = {'Content-type': 'application/json'}
     response = requests.patch(f'http://objapi.course.qa-practice.com/object/{new_obj}', json=data, headers=headers)
-    assert response.json()['name'] == 'Artem_22'
+    assert response.json()['name'] == data['name']
     assert response.status_code == 200
 
 
