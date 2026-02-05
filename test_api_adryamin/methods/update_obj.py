@@ -10,4 +10,3 @@ class UpdateObj(Endpoint):
         self.response = requests.put(f'{self.url}/{post_id}', json=payload, headers=headers)
         self.json = self.response.json()
         return self.response
-

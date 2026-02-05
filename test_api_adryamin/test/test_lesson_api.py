@@ -9,6 +9,7 @@ new_data = [
 
 data = {"name": "Artem_1", "data": {"Age": 29, "Proff": "New_AQA"}}
 
+
 @pytest.mark.parametrize('data', new_data)
 def test_create_obj(create_obj, data):
     create_obj.create_new_obj(data)
