@@ -10,4 +10,3 @@ class CreateObj(Endpoint):
         self.response = requests.post(self.url, json=payload, headers=headers)
         self.json = self.response.json()
         return self.response
-

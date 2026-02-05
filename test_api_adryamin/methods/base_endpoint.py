@@ -2,7 +2,7 @@ import allure
 
 
 class Endpoint:
-    url = f'http://objapi.course.qa-practice.com/object'
+    url = 'http://objapi.course.qa-practice.com/object'
     headers = {'Content-type': 'application/json'}
     response = None
     json = None
