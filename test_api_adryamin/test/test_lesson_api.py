@@ -9,6 +9,8 @@ new_data = [
 
 data = {"name": "Artem_1", "data": {"Age": 29, "Proff": "New_AQA"}}
 
+data_patch = {"name": "Artem_22"}
+
 
 @pytest.mark.parametrize('data', new_data)
 def test_create_obj(create_obj, data):
@@ -26,3 +28,9 @@ def test_update_obj(post_id, update_obj):
 def test_delete_obj(delete_obj, post_id):
     delete_obj.delete_old_obj(post_id)
     delete_obj.check_status_code(200)
+
+
+def test_update_obj_patch(post_id, update_obj_patch):
+    update_obj_patch.update_obj_patch(post_id, data_patch)
+    update_obj_patch.check_response_name(data_patch['name'])
+    update_obj_patch.check_status_code(200)
