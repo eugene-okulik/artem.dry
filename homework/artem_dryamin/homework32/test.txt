@@ -1,3 +1,4 @@
+Задание1
 Go to first line in file: g
 Go to last line in file: G
 Forward one window: Space
@@ -7,3 +8,14 @@ Search forward for matching line: /текст
 Search backward for matching line: ?текст
 Repeat previous search: n
 Repeat previous search in reverse direction: N
+
+Задание2
+/dev/null - специальный символьный файл
+/dev/zero - специальный символьный файл
+/dev/sda - файл не существует
+/dev/tty - специальный символьный файл
+/root - директория
+/etc/passwd - обычный файл
+/proc/mounts - символическая ссылка
+/bin/ls - обычный файл
+/bin/zcat - обычный файл
